@@ -321,32 +321,55 @@ img {
   object-fit: cover;
 }
 
-/* Photo Gallery — 2-Column Uncropped Large Masonry Grid */
+/* Photo gallery — recovered from the original Google Sites composition. */
 .photo-gallery {
-  column-count: 2; /* 2 columns makes photos significantly larger */
-  column-gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
-.photo-gallery img {
-  width: 100%;
-  height: auto; /* Natural aspect ratio, uncropped */
-  display: block;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
-  break-inside: avoid;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.photo-gallery-row,
+.photo-gallery-stack {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
 }
 
-.photo-gallery img:hover {
-  transform: scale(1.015);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+.photo-gallery-row--8-4 {
+  grid-template-columns: 760fr 365fr;
+}
+
+.photo-gallery-row--5-7 {
+  grid-template-columns: 464fr 661fr;
+}
+
+.photo-gallery-row--5-4-3 {
+  grid-template-columns: 464fr 365fr 266fr;
+}
+
+.photo-gallery-row--7-5 {
+  grid-template-columns: 661fr 464fr;
+}
+
+.photo-gallery-stack {
+  grid-template-columns: 1fr;
+}
+
+.photo-gallery img,
+.photo-gallery-stack img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
 }
 
 @media (max-width: 768px) {
-  .photo-gallery {
-    column-count: 1; /* Single column on mobile for maximum photo size */
+  .photo-gallery-row--8-4,
+  .photo-gallery-row--5-7,
+  .photo-gallery-row--5-4-3,
+  .photo-gallery-row--7-5 {
+    grid-template-columns: 1fr;
   }
 }
 
