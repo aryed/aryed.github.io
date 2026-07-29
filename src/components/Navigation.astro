@@ -22,4 +22,32 @@ function isActive(path: string) {
   <a href="/teaching" aria-current={isActive('/teaching') ? 'page' : undefined}>Teaching</a>
   <a href="/non-math" aria-current={isActive('/non-math') ? 'page' : undefined}>Non math</a>
   <a href="/photo-albums" aria-current={isActive('/photo-albums') ? 'page' : undefined}>Photo albums</a>
+
+  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle dark mode">
+    <span id="theme-toggle-icon">🌙</span>
+  </button>
 </nav>
+
+<script is:inline>
+  function setupThemeToggle() {
+    const btn = document.getElementById('theme-toggle');
+    const icon = document.getElementById('theme-toggle-icon');
+    if (!btn || !icon) return;
+
+    function updateIcon(theme) {
+      icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    updateIcon(currentTheme);
+
+    btn.addEventListener('click', () => {
+      const active = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = active === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateIcon(next);
+    });
+  }
+  setupThemeToggle();
+</script>
