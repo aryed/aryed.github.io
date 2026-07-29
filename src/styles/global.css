@@ -1,10 +1,9 @@
-/* Global CSS for Arye Deutsch's Academic Website */
+/* Global CSS with Light/Dark Theme Support */
 :root {
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 
   --color-bg: #ffffff;
-  --color-surface: #ffffff;
   --color-text: #1e293b;
   --color-muted: #64748b;
   --color-border: #e2e8f0;
@@ -12,8 +11,25 @@
   --color-primary: #1e3a8a;
   --color-link: #2563eb;
   --color-link-hover: #1d4ed8;
+  --color-statement: #a81c1c;
+  --color-dropdown-bg: #ffffff;
+  --color-dropdown-hover: #f8fafc;
 
   --max-width: 1140px;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0f172a;
+  --color-text: #f1f5f9;
+  --color-muted: #94a3b8;
+  --color-border: #334155;
+
+  --color-primary: #60a5fa;
+  --color-link: #38bdf8;
+  --color-link-hover: #7dd3fc;
+  --color-statement: #f87171;
+  --color-dropdown-bg: #1e293b;
+  --color-dropdown-hover: #334155;
 }
 
 * {
@@ -36,6 +52,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* Links */
@@ -57,6 +75,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .site-header-inner {
@@ -67,7 +86,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  flex-wrap: nowrap; /* Single horizontal line on desktop */
+  flex-wrap: nowrap;
 }
 
 @media (max-width: 960px) {
@@ -78,7 +97,7 @@ a:hover {
   }
 }
 
-/* Brand — π* without colored box background */
+/* Brand — π* without box background */
 .site-brand {
   display: flex;
   align-items: center;
@@ -101,7 +120,7 @@ a:hover {
   margin-right: 0.15rem;
 }
 
-/* Navigation Links — Compact spacing for single line */
+/* Navigation Links */
 .site-navigation {
   display: flex;
   align-items: center;
@@ -111,7 +130,7 @@ a:hover {
 
 .site-navigation a {
   text-decoration: none;
-  color: #475569;
+  color: var(--color-muted);
   font-weight: 400;
   font-size: 0.95rem;
   transition: color 0.15s ease;
@@ -119,8 +138,28 @@ a:hover {
 
 .site-navigation a:hover,
 .site-navigation a[aria-current="page"] {
-  color: #0f172a;
+  color: var(--color-text);
   font-weight: 600;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  line-height: 1;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--color-dropdown-hover);
 }
 
 /* Navigation Dropdown */
@@ -131,7 +170,7 @@ details.nav-dropdown {
 
 details.nav-dropdown summary {
   cursor: pointer;
-  color: #475569;
+  color: var(--color-muted);
   font-weight: 400;
   font-size: 0.95rem;
   list-style: none;
@@ -151,7 +190,7 @@ details.nav-dropdown summary::after {
 }
 
 details.nav-dropdown[open] summary {
-  color: #0f172a;
+  color: var(--color-text);
   font-weight: 600;
 }
 
@@ -160,10 +199,10 @@ details.nav-dropdown[open] summary {
   top: 100%;
   right: 0;
   margin-top: 0.5rem;
-  background-color: var(--color-bg);
+  background-color: var(--color-dropdown-bg);
   border: 1px solid var(--color-border);
   border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 0.5rem 0;
   min-width: 220px;
   display: flex;
@@ -174,10 +213,11 @@ details.nav-dropdown[open] summary {
 .nav-menu a {
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
+  color: var(--color-text);
 }
 
 .nav-menu a:hover {
-  background-color: #f8fafc;
+  background-color: var(--color-dropdown-hover);
 }
 
 /* Page Shell */
@@ -188,6 +228,7 @@ details.nav-dropdown[open] summary {
   padding: 2rem 2rem 4rem 2rem;
   flex: 1;
   background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 .page-title {
@@ -195,12 +236,12 @@ details.nav-dropdown[open] summary {
   font-weight: 700;
   letter-spacing: -0.01em;
   margin-bottom: 1.75rem;
-  color: #0f172a;
+  color: var(--color-text);
 }
 
 /* Typography */
 h1, h2, h3, h4 {
-  color: #0f172a;
+  color: var(--color-text);
   font-weight: 700;
   line-height: 1.3;
 }
@@ -219,7 +260,7 @@ h3 {
 
 p {
   margin-bottom: 1rem;
-  color: #334155;
+  color: var(--color-text);
   line-height: 1.65;
 }
 
@@ -230,19 +271,19 @@ ul, ol {
 
 li {
   margin-bottom: 0.5rem;
-  color: #334155;
+  color: var(--color-text);
 }
 
-/* Small text utility for Outer Wilds note */
+/* Small text utility */
 .text-small {
   font-size: 80%;
-  color: #64748b;
+  color: var(--color-muted);
   font-weight: normal;
 }
 
 /* Statement Banner */
 .statement-banner {
-  color: #a81c1c;
+  color: var(--color-statement);
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.45;
@@ -254,7 +295,7 @@ li {
 /* Grid Layouts */
 .grid-2col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 2.5rem;
   align-items: start;
   margin-bottom: 2rem;
@@ -293,7 +334,7 @@ img {
   height: 220px;
   object-fit: cover;
   border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
 }
 
@@ -308,7 +349,7 @@ img {
   border: 1px solid var(--color-border);
   border-radius: 6px;
   margin: 1.5rem 0;
-  background-color: #f8fafc;
+  background-color: var(--color-dropdown-bg);
 }
 
 /* Footer */
