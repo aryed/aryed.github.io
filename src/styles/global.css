@@ -321,38 +321,32 @@ img {
   object-fit: cover;
 }
 
-/* Photo Gallery — Natural Aspect Ratio Masonry Grid (Matching Original Screenshot) */
+/* Photo Gallery — 2-Column Uncropped Large Masonry Grid */
 .photo-gallery {
-  column-count: 3;
-  column-gap: 1.25rem;
+  column-count: 2; /* 2 columns makes photos significantly larger */
+  column-gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
 .photo-gallery img {
   width: 100%;
-  height: auto; /* Preserve natural aspect ratio without cropping */
+  height: auto; /* Natural aspect ratio, uncropped */
   display: block;
   border-radius: 6px;
-  margin-bottom: 1.25rem;
-  break-inside: avoid; /* Prevent splitting across columns */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .photo-gallery img:hover {
   transform: scale(1.015);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .photo-gallery {
-    column-count: 2;
-  }
-}
-
-@media (max-width: 550px) {
-  .photo-gallery {
-    column-count: 1;
+    column-count: 1; /* Single column on mobile for maximum photo size */
   }
 }
 
