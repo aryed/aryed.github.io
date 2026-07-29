@@ -1,13 +1,34 @@
-# Arye Deutsch's personal website
+# Arye Deutsch's Personal Website
 
-This is a clean, dependency-free static website rebuilt from the Google Sites Takeout. The pages are ordinary HTML and share one stylesheet, so they can be edited directly without Google Sites' generated runtime.
+A modern, fast, and dependency-clean academic website built with **[Astro](https://astro.build/)** and hosted on **GitHub Pages**.
 
-## Publishing with GitHub Pages
+## Project Structure
 
-1. Create a GitHub repository for this folder.
-2. Push the `main` branch.
-3. In GitHub, open **Settings → Pages**, choose **Deploy from a branch**, then choose `main` and `/(root)`.
+```text
+.
+├── .github/workflows/deploy.yml   # GitHub Actions automated deployment
+├── public/images/                 # Site media & photos
+├── src/
+│   ├── components/                # Header and Navigation components
+│   ├── layouts/                   # Master PageLayout wrapper
+│   ├── pages/                     # Markdown pages (home, teaching, seminars, etc.)
+│   └── styles/                    # Global CSS styling
+└── astro.config.mjs               # Astro site configuration
+```
 
-`index.html` is the homepage. The page files, local images, and all original outbound document and video links are preserved. `Home.html` is retained as a compatibility copy for old links.
+## Local Development
 
-External resources—such as Google Drive documents and YouTube videos—remain hosted by their current providers.
+```bash
+# Install dependencies
+npm install
+
+# Start local dev server
+npm run dev
+
+# Build production static bundle
+npm run build
+```
+
+## Automated GitHub Pages Deployment
+
+Whenever changes are pushed to `main`, GitHub Actions automatically builds the Astro site and deploys it to GitHub Pages ([`https://aryed.github.io`](https://aryed.github.io)).
