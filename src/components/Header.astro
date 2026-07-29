@@ -1,0 +1,14 @@
+---
+import Navigation from './Navigation.astro';
+
+const { currentPath = '' } = Astro.props;
+---
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-brand" href="/" aria-label="Arye Deutsch home">
+      <span class="site-mark" aria-hidden="true">π*</span>
+      <span class="site-name">Arye Deutsch</span>
+    </a>
+    <Navigation currentPath={currentPath} />
+  </div>
+</header>

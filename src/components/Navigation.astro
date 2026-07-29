@@ -1,0 +1,25 @@
+---
+const { currentPath = '' } = Astro.props;
+
+function isActive(path: string) {
+  if (path === '/' && (currentPath === '' || currentPath === '/')) return true;
+  if (path !== '/' && currentPath.includes(path)) return true;
+  return false;
+}
+---
+<nav class="site-navigation" aria-label="Primary navigation">
+  <a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a>
+  <a href="/seminars/global-kuranishi" aria-current={isActive('/seminars/global-kuranishi') ? 'page' : undefined}>Global Kuranishi charts seminar</a>
+  
+  <details class="nav-dropdown">
+    <summary aria-current={currentPath.includes('/seminars/') && !currentPath.includes('global-kuranishi') ? 'page' : undefined}>Archived seminars</summary>
+    <div class="nav-menu">
+      <a href="/seminars/lagrangian-tori" aria-current={isActive('/seminars/lagrangian-tori') ? 'page' : undefined}>Lagrangian tori seminar</a>
+      <a href="/seminars/floer-homotopy" aria-current={isActive('/seminars/floer-homotopy') ? 'page' : undefined}>Floer homotopy seminar</a>
+    </div>
+  </details>
+
+  <a href="/teaching" aria-current={isActive('/teaching') ? 'page' : undefined}>Teaching</a>
+  <a href="/non-math" aria-current={isActive('/non-math') ? 'page' : undefined}>Non math</a>
+  <a href="/photo-albums" aria-current={isActive('/photo-albums') ? 'page' : undefined}>Photo albums</a>
+</nav>
