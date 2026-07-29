@@ -37,6 +37,6 @@ These are candidates for future work, not authorization to change the site witho
 ## Documentation map
 
 - `AGENTS.md`: operating rules shared by Codex, Antigravity, and future agents.
+- `GEMINI.md`: Antigravity entrypoint that delegates to the canonical `AGENTS.md` rules.
 - `README.md`: project overview, structure, and local commands.
 - `docs/non-math-gallery-recovery.md`: detailed recovery evidence, method, implementation, and reusable procedure.
-

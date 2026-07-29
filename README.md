@@ -4,7 +4,7 @@ A modern, fast, and dependency-clean academic website built with **[Astro](https
 
 ## Collaboration and project history
 
-Codex, Google Antigravity, and other coding agents should begin with [`AGENTS.md`](AGENTS.md). Current decisions and follow-up work are tracked in [`PROJECT_STATUS.md`](PROJECT_STATUS.md), while detailed reconstruction notes live in [`docs/`](docs/).
+Codex and other coding agents should begin with [`AGENTS.md`](AGENTS.md). Google Antigravity enters through [`GEMINI.md`](GEMINI.md), which points to the same canonical instructions. Current decisions and follow-up work are tracked in [`PROJECT_STATUS.md`](PROJECT_STATUS.md), while detailed reconstruction notes live in [`docs/`](docs/).
 
 ## Project Structure
 
