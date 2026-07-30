@@ -8,7 +8,7 @@ Last updated: 2026-07-30
 - GitHub Pages fallback: <https://aryed.github.io/> (redirects to the canonical domain)
 - Repository: `aryed/aryed.github.io`
 - Branch deployed by GitHub Pages: `main`
-- Framework: Astro 4, producing a static site in `dist/`
+- Framework: Astro 7, producing a static site in `dist/`
 - Shared styling: `src/styles/global.css`
 - Deployment workflow: `.github/workflows/deploy.yml`
 
@@ -29,6 +29,7 @@ Last updated: 2026-07-30
 - Recovered original favicon from historical Google Site and configured standard PNG and ICO favicons in layout headers.
 - Added the GitHub Pages cutover layer: canonical and social metadata, XML sitemap, `robots.txt`, and repository-variable hooks for Google Analytics and Search Console verification. See `docs/google-sites-cutover.md`.
 - Configured `aryedeutsch.com` as the GitHub Pages custom domain and updated canonical URLs, sitemap output, and migration guidance.
+- Upgraded framework to Astro 7 (`^7.1.6`) stable production release line, resolving Dependabot security alerts and verifying clean static site builds.
 
 ## Known follow-up work
 
