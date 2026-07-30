@@ -109,17 +109,34 @@ a:hover {
   white-space: nowrap;
 }
 
-.site-mark {
-  font-size: 1.65rem;
-  color: var(--color-text);
-  background: transparent;
-  padding: 0;
+.site-mark-brand {
+  display: inline-flex;
+  align-items: center;
   margin-right: 0.15rem;
-  line-height: 1;
 }
 
-.site-mark .katex-html {
-  color: inherit;
+.site-mark-img {
+  height: 1.65rem;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+/* Light / Dark Mode Toggle for Brand Image */
+html[data-theme="dark"] .site-mark-light {
+  display: none !important;
+}
+
+html[data-theme="dark"] .site-mark-dark {
+  display: inline-block !important;
+}
+
+html:not([data-theme="dark"]) .site-mark-light {
+  display: inline-block !important;
+}
+
+html:not([data-theme="dark"]) .site-mark-dark {
+  display: none !important;
 }
 
 /* Navigation Links */
