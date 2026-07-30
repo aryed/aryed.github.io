@@ -4,7 +4,8 @@ Last updated: 2026-07-30
 
 ## Current site
 
-- Live site: <https://aryed.github.io/>
+- Canonical live site: <https://aryedeutsch.com/>
+- GitHub Pages fallback: <https://aryed.github.io/> (redirects to the canonical domain)
 - Repository: `aryed/aryed.github.io`
 - Branch deployed by GitHub Pages: `main`
 - Framework: Astro 4, producing a static site in `dist/`
@@ -27,6 +28,7 @@ Last updated: 2026-07-30
 - Recovered the original Non math photo gallery's image crops, ordering, and asymmetric composition. See `docs/non-math-gallery-recovery.md` and commit `a65fbc2`.
 - Recovered original favicon from historical Google Site and configured standard PNG and ICO favicons in layout headers.
 - Added the GitHub Pages cutover layer: canonical and social metadata, XML sitemap, `robots.txt`, and repository-variable hooks for Google Analytics and Search Console verification. See `docs/google-sites-cutover.md`.
+- Configured `aryedeutsch.com` as the GitHub Pages custom domain and updated canonical URLs, sitemap output, and migration guidance.
 
 ## Known follow-up work
 

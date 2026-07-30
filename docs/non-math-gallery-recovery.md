@@ -2,7 +2,7 @@
 
 Date recovered: 2026-07-30  
 Live historical source: <https://sites.google.com/view/aryedeutsch/non-math>  
-New page: <https://aryed.github.io/non-math/>  
+New page: <https://aryedeutsch.com/non-math/>
 Implementation commit: `a65fbc2`
 
 ## What had been lost
@@ -95,4 +95,3 @@ For another manually composed page or gallery:
 - Desktop rendering reproduced the original row groupings, crops, sequence, and proportional widths.
 - At a 390 px viewport, the gallery itself fit in one column without horizontal overflow.
 - GitHub Pages successfully deployed commit `a65fbc2`.
-
