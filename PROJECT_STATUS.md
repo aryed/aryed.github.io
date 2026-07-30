@@ -32,9 +32,8 @@ Last updated: 2026-07-30
 These are candidates for future work, not authorization to change the site without a request.
 
 1. Fix the mobile header/navigation overflow. During gallery QA at a 390 px viewport, the page content fit correctly but the header extended horizontally.
-2. Review the GitHub Actions Node configuration. The 2026-07-30 deployment succeeded but warned that the actions' Node.js 20 runtime was deprecated and forced to Node.js 24.
-3. Perform a page-by-page visual preservation audit against the still-live Google Sites version, prioritizing layouts that were manually composed.
-4. Complete the manual Google Sites, Analytics, and Search Console cutover checklist in `docs/google-sites-cutover.md`.
+2. Perform a page-by-page visual preservation audit against the still-live Google Sites version, prioritizing layouts that were manually composed.
+3. Complete the manual Google Sites, Analytics, and Search Console cutover checklist in `docs/google-sites-cutover.md`.
 
 ## Documentation map
 
