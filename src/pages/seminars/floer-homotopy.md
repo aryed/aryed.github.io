@@ -39,7 +39,7 @@ This page contains materials from the Floer homotopy seminar (September–Decemb
 - **Talk 9 - Computations in the homotopy category of flow categories**; Jianqiao Shang - 25.11  
   [Video](https://youtu.be/VRDNXuIL_lU)
 
-- **Talk 10 - Global Kuranishi Charts in Gromow witten theory**; Guy Dorenstein - 2.12  
+- **Talk 10 - Global Kuranishi Charts in Gromov-Witten theory**; Guy Dorenstein - 2.12
   [Video](https://youtu.be/VjG35uXvJk4)
 
 - **Talk 11 - Infinity category of flow categories**; Sebastian - 9.12  

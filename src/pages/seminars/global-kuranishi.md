@@ -6,10 +6,10 @@ description: Global Kuranishi charts seminar — Arye Deutsch
 
 # Global Kuranishi charts seminar
 
-This is a physical seminar, taking place Tuesday at 11:00 in Ross 70 (April-June 2026). The organizsers are Keren and Arye.
+This is an in-person seminar, taking place on Tuesdays at 11:00 in Ross 70 (April-June 2026). The organizers are Keren and Arye.
 
 The goal is to study [Complex cobordism, Hamiltonian loops and global Kuranishi charts](https://arxiv.org/abs/2110.14320) (by Abouzaid, McLean, Smith)  
-The format is a reading seminar; each week a speaker will prepare and present few pages from the paper.
+The format is a reading seminar; each week a speaker will prepare and present a few pages from the paper.
 
 ---
 
