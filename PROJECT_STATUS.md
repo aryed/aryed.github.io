@@ -30,6 +30,7 @@ Last updated: 2026-07-30
 - Added the GitHub Pages cutover layer: canonical and social metadata, XML sitemap, `robots.txt`, and repository-variable hooks for Google Analytics and Search Console verification. See `docs/google-sites-cutover.md`.
 - Configured `aryedeutsch.com` as the GitHub Pages custom domain and updated canonical URLs, sitemap output, and migration guidance.
 - Upgraded framework to Astro 7 (`^7.1.6`) stable production release line, resolving Dependabot security alerts and verifying clean static site builds.
+- Merged `copilot/verify-spelling-grammar` branch containing spelling and grammar corrections across `index.astro`, `non-math.astro`, `floer-homotopy.md`, `global-kuranishi.md`, and `teaching.astro`.
 
 ## Known follow-up work
 
