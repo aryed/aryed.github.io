@@ -25,6 +25,7 @@ Last updated: 2026-07-30
 - Migrated the site to Astro with automatic GitHub Pages deployment.
 - Added light/dark theme support and repaired page rendering issues introduced during the migration.
 - Recovered the original Non math photo gallery's image crops, ordering, and asymmetric composition. See `docs/non-math-gallery-recovery.md` and commit `a65fbc2`.
+- Added the GitHub Pages cutover layer: canonical and social metadata, XML sitemap, `robots.txt`, and repository-variable hooks for Google Analytics and Search Console verification. See `docs/google-sites-cutover.md`.
 
 ## Known follow-up work
 
@@ -33,6 +34,7 @@ These are candidates for future work, not authorization to change the site witho
 1. Fix the mobile header/navigation overflow. During gallery QA at a 390 px viewport, the page content fit correctly but the header extended horizontally.
 2. Review the GitHub Actions Node configuration. The 2026-07-30 deployment succeeded but warned that the actions' Node.js 20 runtime was deprecated and forced to Node.js 24.
 3. Perform a page-by-page visual preservation audit against the still-live Google Sites version, prioritizing layouts that were manually composed.
+4. Complete the manual Google Sites, Analytics, and Search Console cutover checklist in `docs/google-sites-cutover.md`.
 
 ## Documentation map
 
@@ -40,3 +42,4 @@ These are candidates for future work, not authorization to change the site witho
 - `GEMINI.md`: Antigravity entrypoint that delegates to the canonical `AGENTS.md` rules.
 - `README.md`: project overview, structure, and local commands.
 - `docs/non-math-gallery-recovery.md`: detailed recovery evidence, method, implementation, and reusable procedure.
+- `docs/google-sites-cutover.md`: URL map and manual Google/SEO migration checklist.
