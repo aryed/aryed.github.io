@@ -25,6 +25,7 @@ Last updated: 2026-07-30
 - Migrated the site to Astro with automatic GitHub Pages deployment.
 - Added light/dark theme support and repaired page rendering issues introduced during the migration.
 - Recovered the original Non math photo gallery's image crops, ordering, and asymmetric composition. See `docs/non-math-gallery-recovery.md` and commit `a65fbc2`.
+- Recovered original favicon from historical Google Site and configured standard PNG and ICO favicons in layout headers.
 - Added the GitHub Pages cutover layer: canonical and social metadata, XML sitemap, `robots.txt`, and repository-variable hooks for Google Analytics and Search Console verification. See `docs/google-sites-cutover.md`.
 
 ## Known follow-up work
