@@ -35,4 +35,4 @@ npm run build
 
 ## Automated GitHub Pages Deployment
 
-Whenever changes are pushed to `main`, GitHub Actions automatically builds the Astro site and deploys it to GitHub Pages ([`https://aryed.github.io`](https://aryed.github.io)).
+Whenever changes are pushed to `main`, GitHub Actions automatically builds the Astro site and deploys it to GitHub Pages at [`https://aryedeutsch.com`](https://aryedeutsch.com). The repository's default `aryed.github.io` address redirects to the custom domain.

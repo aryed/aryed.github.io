@@ -5,7 +5,7 @@ import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://aryed.github.io',
+  site: 'https://aryedeutsch.com',
   base: '/',
   outDir: './dist',
   integrations: [sitemap()],
