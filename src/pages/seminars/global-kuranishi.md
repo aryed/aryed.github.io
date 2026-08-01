@@ -15,8 +15,8 @@ The format is a reading seminar; each week a speaker will prepare and present a 
 
 ### Schedule
 
-- **21 April**: Keren — Intro and definitions (4.1–4.?)
-- **28 April**: May — Topology of (micro)bundles and Kuranishi structures (4.? – 4.6)
+- **21 April**: Keren — Intro and definitions (4.1)
+- **28 April**: May — Topology of (micro)bundles and Kuranishi structures (4.2 – 4.6)
 - **5 May**: Asaf — From Rational Homology to Generalized Orientations (5.1 – 5.4)
 - **12 May**: Arye — Morava K-theory and Ambidexterity (5.5 – 5.6) — [Notes](https://drive.google.com/file/d/1NX9zJ_TPo-GaZEu3eTQU-8hKgyUIbAEO/view?usp=sharing)
 - **2 June**: Or — Bonus: Smoothing theory
