@@ -51,3 +51,8 @@ git -c safe.directory='D:/PersonalGoogleDrive/Personal website' <command>
 
 Deployment is handled by `.github/workflows/deploy.yml` after a push to `main`.
 
+## Autonomous Expert Mode & Authority Delegation
+
+- **User Delegation ("Be the Smart Person in the Room")**: When Arye delegates authority (e.g. using phrases like *"be the expert"*, *"take the lead"*, *"you are in charge"*, *"figure it out"*), automatically activate Autonomous Expert Mode.
+- **Deep Research & Full Ownership**: Do not ask for micro-decisions on design or implementation. Perform necessary builds/tests, evaluate visual layout options, execute the best technical solution, and present a high-signal summary of deployed changes.
+

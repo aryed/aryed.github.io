@@ -31,14 +31,14 @@ Last updated: 2026-07-30
 - Configured `aryedeutsch.com` as the GitHub Pages custom domain and updated canonical URLs, sitemap output, and migration guidance.
 - Upgraded framework to Astro 7 (`^7.1.6`) stable production release line, resolving Dependabot security alerts and verifying clean static site builds.
 - Merged `copilot/verify-spelling-grammar` branch containing spelling and grammar corrections across `index.astro`, `non-math.astro`, `floer-homotopy.md`, `global-kuranishi.md`, and `teaching.astro`.
+- Redesigned mobile header & primary navigation with an interactive, accessible hamburger menu drawer, eliminating horizontal page overflow and centering header alignment on mobile viewports.
 
 ## Known follow-up work
 
 These are candidates for future work, not authorization to change the site without a request.
 
-1. Fix the mobile header/navigation overflow. During gallery QA at a 390 px viewport, the page content fit correctly but the header extended horizontally.
-2. Perform a page-by-page visual preservation audit against the still-live Google Sites version, prioritizing layouts that were manually composed.
-3. Complete the manual Google Sites, Analytics, and Search Console cutover checklist in `docs/google-sites-cutover.md`.
+1. Perform a page-by-page visual preservation audit against the still-live Google Sites version, prioritizing layouts that were manually composed.
+2. Complete the manual Google Sites, Analytics, and Search Console cutover checklist in `docs/google-sites-cutover.md`.
 
 ## Documentation map
 

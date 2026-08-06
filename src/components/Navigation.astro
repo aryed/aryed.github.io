@@ -7,47 +7,108 @@ function isActive(path: string) {
   return false;
 }
 ---
-<nav class="site-navigation" aria-label="Primary navigation">
-  <a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a>
-  <a href="/seminars/global-kuranishi" aria-current={isActive('/seminars/global-kuranishi') ? 'page' : undefined}>Global Kuranishi charts seminar</a>
-  
-  <details class="nav-dropdown">
-    <summary aria-current={currentPath.includes('/seminars/') && !currentPath.includes('global-kuranishi') ? 'page' : undefined}>Archived seminars</summary>
-    <div class="nav-menu">
-      <a href="/seminars/lagrangian-tori" aria-current={isActive('/seminars/lagrangian-tori') ? 'page' : undefined}>Lagrangian tori seminar</a>
-      <a href="/seminars/floer-homotopy" aria-current={isActive('/seminars/floer-homotopy') ? 'page' : undefined}>Floer homotopy seminar</a>
-    </div>
-  </details>
+<div class="site-navigation-wrapper">
+  <div class="site-header-controls">
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle dark mode">
+      <span id="theme-toggle-icon">🌙</span>
+    </button>
 
-  <a href="/teaching" aria-current={isActive('/teaching') ? 'page' : undefined}>Teaching</a>
-  <a href="/non-math" aria-current={isActive('/non-math') ? 'page' : undefined}>Non math</a>
-  <a href="/photo-albums" aria-current={isActive('/photo-albums') ? 'page' : undefined}>Photo albums</a>
+    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-navigation">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+  </div>
 
-  <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle dark mode">
-    <span id="theme-toggle-icon">🌙</span>
-  </button>
-</nav>
+  <nav id="site-navigation" class="site-navigation" aria-label="Primary navigation">
+    <a href="/" aria-current={isActive('/') ? 'page' : undefined}>Home</a>
+    <a href="/seminars/global-kuranishi" aria-current={isActive('/seminars/global-kuranishi') ? 'page' : undefined}>Global Kuranishi charts seminar</a>
+
+    <details class="nav-dropdown">
+      <summary aria-current={currentPath.includes('/seminars/') && !currentPath.includes('global-kuranishi') ? 'page' : undefined}>Archived seminars</summary>
+      <div class="nav-menu">
+        <a href="/seminars/lagrangian-tori" aria-current={isActive('/seminars/lagrangian-tori') ? 'page' : undefined}>Lagrangian tori seminar</a>
+        <a href="/seminars/floer-homotopy" aria-current={isActive('/seminars/floer-homotopy') ? 'page' : undefined}>Floer homotopy seminar</a>
+      </div>
+    </details>
+
+    <a href="/teaching" aria-current={isActive('/teaching') ? 'page' : undefined}>Teaching</a>
+    <a href="/non-math" aria-current={isActive('/non-math') ? 'page' : undefined}>Non math</a>
+    <a href="/photo-albums" aria-current={isActive('/photo-albums') ? 'page' : undefined}>Photo albums</a>
+  </nav>
+</div>
 
 <script is:inline>
-  function setupThemeToggle() {
-    const btn = document.getElementById('theme-toggle');
+  function setupNavigation() {
+    // Theme toggle logic
+    const themeBtn = document.getElementById('theme-toggle');
     const icon = document.getElementById('theme-toggle-icon');
-    if (!btn || !icon) return;
 
     function updateIcon(theme) {
-      icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
     }
 
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    updateIcon(currentTheme);
+    if (themeBtn && icon) {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      updateIcon(currentTheme);
 
-    btn.addEventListener('click', () => {
-      const active = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      const next = active === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateIcon(next);
-    });
+      themeBtn.onclick = () => {
+        const active = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const next = active === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateIcon(next);
+      };
+    }
+
+    // Mobile menu toggle logic
+    const menuBtn = document.getElementById('mobile-menu-toggle');
+    const nav = document.getElementById('site-navigation');
+
+    if (menuBtn && nav) {
+      function setMenuState(open) {
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open) {
+          nav.classList.add('is-open');
+        } else {
+          nav.classList.remove('is-open');
+        }
+      }
+
+      menuBtn.onclick = (e) => {
+        e.stopPropagation();
+        const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+        setMenuState(!isOpen);
+      };
+
+      // Close menu when clicking links inside nav on mobile
+      nav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 840) {
+            setMenuState(false);
+          }
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 840 && nav.classList.contains('is-open')) {
+          const header = document.querySelector('.site-header');
+          if (header && !header.contains(e.target)) {
+            setMenuState(false);
+          }
+        }
+      });
+
+      // Close menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+          setMenuState(false);
+        }
+      });
+    }
   }
-  setupThemeToggle();
+
+  setupNavigation();
+  document.addEventListener('astro:after-swap', setupNavigation);
 </script>
