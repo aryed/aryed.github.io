@@ -293,7 +293,7 @@ details.nav-dropdown[open] summary {
 }
 
 /* Mobile Header & Navigation Drawer */
-@media (max-width: 840px) {
+@media (max-width: 960px) {
   .site-header-inner {
     padding: 0.9rem 1.25rem;
     flex-wrap: wrap;
@@ -459,7 +459,7 @@ li {
   margin-bottom: 2rem;
 }
 
-@media (max-width: 840px) {
+@media (max-width: 960px) {
   .grid-2col {
     grid-template-columns: 1fr;
     gap: 1.5rem;

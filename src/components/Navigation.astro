@@ -84,7 +84,7 @@ function isActive(path: string) {
       // Close menu when clicking links inside nav on mobile
       nav.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
-          if (window.innerWidth <= 840) {
+          if (window.innerWidth <= 960) {
             setMenuState(false);
           }
         });
@@ -92,7 +92,7 @@ function isActive(path: string) {
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 840 && nav.classList.contains('is-open')) {
+        if (window.innerWidth <= 960 && nav.classList.contains('is-open')) {
           const header = document.querySelector('.site-header');
           if (header && !header.contains(e.target)) {
             setMenuState(false);
