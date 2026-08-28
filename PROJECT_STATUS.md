@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-08-06
+Last updated: 2026-08-28
 
 ## Current site
 
@@ -32,6 +32,7 @@ Last updated: 2026-08-06
 - Upgraded framework to Astro 7 (`^7.1.6`) stable production release line, resolving Dependabot security alerts and verifying clean static site builds.
 - Merged `copilot/verify-spelling-grammar` branch containing spelling and grammar corrections across `index.astro`, `non-math.astro`, `floer-homotopy.md`, `global-kuranishi.md`, and `teaching.astro`.
 - Redesigned mobile header & primary navigation with an interactive, accessible hamburger menu drawer, eliminating horizontal page overflow and centering header alignment on mobile viewports.
+- Aligned internal links with the sitemap's trailing-slash canonical URLs to avoid unnecessary GitHub Pages redirects during crawling.
 
 ## Known follow-up work
 
