@@ -10,6 +10,7 @@ Here are some photo albums from social events for those who want to see the phot
 
 ### Conferences & Academic Events
 
+- [Khovanov and Floer homotopy (Nantes, 2026)](https://photos.app.goo.gl/BfwDHeKmaHDDFayN6)
 - [Beyond Floer theory (Cambridge, UK, 2026)](https://photos.app.goo.gl/gChADHxKiaY6aj2a8)
 - [New developments in symplectic geometry (Seoul, South Korea, 2025)](https://photos.app.goo.gl/8xPeBgMgYbQP4AhK6)
 - [Math department Pizza 25](https://photos.app.goo.gl/y3TEEUsBtRJeVGsL8)
